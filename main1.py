@@ -78,6 +78,6 @@ if __name__ == '__main__':
                 "points": randint(75, 200)
             }
         )
-
-    #print(sorted_test_game_map)
-    df = pd.DataFrame(test_game_map)
+#print(sorted_test_game_map)
+df = pd.DataFrame(test_game_map)
+df.to_csv("data.csv")
