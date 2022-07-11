@@ -78,26 +78,26 @@ if __name__ == '__main__':
                 "points": randint(75, 200)
             }
         )
-#print(sorted_test_game_map)
-df = pd.DataFrame(test_game_map)
-df.to_csv("data.csv")
+    #print(sorted_test_game_map)
+    df = pd.DataFrame(test_game_map)
+    df.to_csv("data.csv")
 
-df = pd.read_csv("data.csv")
+    df = pd.read_csv("data.csv")
 
-#1 sorting max five per game
-print(df.sort_values(['game_id', 'points']).groupby('game_id').tail(5))
+    #1 sorting max five per game
+    print(df.sort_values(['game_id', 'points']).groupby('game_id').tail(5))
 
-#2 sorting min five per game
-print(df.sort_values(['game_id', 'points']).groupby('game_id').head(5))
+    #2 sorting min five per game
+    print(df.sort_values(['game_id', 'points']).groupby('game_id').head(5))
 
-#3 p > avg point in each game
-df1=df.sort_values(['game_id','points'])[df.points > df.points.mean()].groupby('game_id').head(5)
-print(df1)
+    #3 p > avg point in each game
+    df1=df.sort_values(['game_id','points'])[df.points > df.points.mean()].groupby('game_id').head(5)
+    print(df1)
 
-#4 top in each game weekly
-    #groupby game_id
-    #groupby week
-    #sum of points of each player
-    #show top 5
+    #4 top in each game weekly
+        #groupby game_id
+        #groupby week
+        #sum of points of each player
+        #show top 5
 
-#5 top in each game bi-weekly
+    #5 top in each game bi-weekly
